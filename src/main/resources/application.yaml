@@ -1,3 +1,11 @@
-#comentário
 server:
   port: 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/intro_spring?serverTimeZone=ADT
+    username: postgres
+    password: postdba
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
