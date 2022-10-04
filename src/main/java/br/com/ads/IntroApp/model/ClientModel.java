@@ -26,5 +26,10 @@ public class ClientModel {
     @Getter @Setter
     private String city;
 
+    //..new attributes of V2
+    @Column(nullable = true, length = 100)
+    @Getter @Setter
+    private String email;
+
 
 }
