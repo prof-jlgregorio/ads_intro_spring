@@ -3,6 +3,9 @@ package br.com.ads.IntroApp.controller;
 import br.com.ads.IntroApp.model.ClientModel;
 import br.com.ads.IntroApp.service.ClientServiceV1;
 import br.com.ads.IntroApp.service.ClientServiceV2;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,13 +15,17 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/clients/v2")
+@Api(value = "Client Endpoint Version V2")
 public class ClientControllerV2 {
 
     @Autowired
     private ClientServiceV2 service;
 
     @GetMapping("/{id}")
-    public Optional<ClientModel> findById(@PathVariable("id") long id){
+    @ApiOperation(value = "Returns a Client by ID")
+    public Optional<ClientModel> findById(
+            @ApiParam(name = "id", value = "A valid integer value", required = true)
+            @PathVariable("id") long id){
         return service.findById(id);
     }
 
