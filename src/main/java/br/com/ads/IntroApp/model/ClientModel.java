@@ -37,5 +37,12 @@ public class ClientModel {
     @ApiModelProperty(notes = "A valid email address")
     private String email;
 
+    //..relationship with ProfessionModel
+    @ManyToOne
+    @JoinColumn(name = "profession_id")
+    @Setter @Getter
+    private ProfessionModel profession;
+
+
 
 }

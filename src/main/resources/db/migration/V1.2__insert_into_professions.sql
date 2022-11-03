@@ -1,0 +1,10 @@
+insert into professions (name) values ('Statistician I');
+insert into professions (name) values ('GIS Technical Architect');
+insert into professions (name) values ('Financial Analyst');
+insert into professions (name) values ('Operator');
+insert into professions (name) values ('Analog Circuit Design manager');
+insert into professions (name) values ('Dental Hygienist');
+insert into professions (name) values ('VP Accounting');
+insert into professions (name) values ('Assistant Media Planner');
+insert into professions (name) values ('VP Product Management');
+insert into professions (name) values ('Senior Quality Engineer');

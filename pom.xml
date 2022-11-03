@@ -59,6 +59,13 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- Flyway	 dependency	-->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>9.6.0</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -76,6 +83,23 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!--	Flyway Plugin		-->
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>8.5.13</version>
+				<configuration>
+					<url>jdbc:postgresql://localhost:5432/intro_spring</url>
+					<user>postgres</user>
+					<password>postdba</password>
+					<schemas>
+						<schema>public</schema>
+					</schemas>
+				</configuration>
+			</plugin>
+
+
 		</plugins>
 	</build>
 
