@@ -10,5 +10,4 @@ public interface ProfessionRepository extends JpaRepository<ProfessionModel, Lon
     Optional<ProfessionModel> findById(long id);
 
 
-
 }

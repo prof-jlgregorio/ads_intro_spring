@@ -7,9 +7,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.standard.Media;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +23,8 @@ public class ClientControllerV2 {
     @Autowired
     private ClientServiceV2 service;
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE,
+            MediaType.APPLICATION_XML_VALUE })
     @ApiOperation(value = "Returns a Client by ID")
     public Optional<ClientModel> findById(
             @ApiParam(name = "id", value = "A valid integer value", required = true)
@@ -29,17 +32,19 @@ public class ClientControllerV2 {
         return service.findById(id);
     }
 
-    @GetMapping
+    @GetMapping( produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<ClientModel> findAll(){
         return  service.findAll();
     }
 
-    @PostMapping
+    @PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+    consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     public ClientModel save(@RequestBody ClientModel model){
         return service.save(model);
     }
 
-    @PutMapping
+    @PutMapping( produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+            consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE } )
     public ClientModel update(@RequestBody ClientModel model){
         return service.update(model);
     }
