@@ -25,8 +25,13 @@ public class ProfessionController {
     }
 
     @GetMapping("/{id}")
-    public Optional<ProfessionModel> findById(@PathVariable("id") long id){
-        return service.findById(id);
+    public ProfessionModel findById(@PathVariable("id") long id){
+        var professionModel = service.findById(id);
+        if(professionModel.isPresent()){
+            return professionModel.get();
+        } else{
+            return null;
+        }
     }
 
 }

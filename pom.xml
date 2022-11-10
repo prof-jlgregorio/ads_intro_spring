@@ -72,6 +72,12 @@
 			<version>2.13.3</version>
 		</dependency>
 
+<!--		HATEOAS-->
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

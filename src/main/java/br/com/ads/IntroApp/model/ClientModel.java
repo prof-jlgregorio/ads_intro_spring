@@ -1,6 +1,7 @@
 package br.com.ads.IntroApp.model;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "clients")
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientModel {
+public class ClientModel extends RepresentationModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

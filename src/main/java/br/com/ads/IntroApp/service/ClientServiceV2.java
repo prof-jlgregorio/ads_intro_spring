@@ -3,6 +3,8 @@ package br.com.ads.IntroApp.service;
 import br.com.ads.IntroApp.model.ClientModel;
 import br.com.ads.IntroApp.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class ClientServiceV2 {
         return repository.findById(id);
     }
 
-    public List<ClientModel> findAll(){
-        return repository.findAll();
+    public Page<ClientModel> findAll(Pageable pageable){
+        return repository.findAll(pageable);
     }
 
     public ClientModel save(ClientModel model){

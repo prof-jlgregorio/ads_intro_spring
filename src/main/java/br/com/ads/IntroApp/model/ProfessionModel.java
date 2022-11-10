@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.hateoas.RepresentationModel;
+import springfox.documentation.service.Representation;
 
 import javax.persistence.*;
 
@@ -11,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "professions")
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProfessionModel {
+public class ProfessionModel extends RepresentationModel {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
